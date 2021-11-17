@@ -1,9 +1,10 @@
-% Written by amir shamaei amirshamaei@isibrno.cz 2021
-% Algorithm is based on "Automatic frequency and phase alignment of in vivo
-% J-difference-edited MR spectra by frequency domain correlation" paper
-% Authors find the maximum using manual grid search, but here the
-% problem is converted to a non-linear minimiazation problem which can be
-% solved by direct search or newton family methods,
+% Frequency and Phase Correction of MRS signals Using Cross-Correlation
+% Written by Amir Shamaei amirshamaei@isibrno.cz 2021
+% The algorithm is based on the "Automatic frequency and phase alignment 
+% of in vivo J-difference-edited MR spectra by frequency domain correlation" paper. 
+% The authors of the paper find the maximum using manual grid search. 
+% But here, the problem is converted to a non-linear minimization problem 
+% which can be solved by direct search or Newton family methods.
 
 function rslt = FPCcorr(fid, signals, method, range, dwelltime, visus )
 
@@ -67,7 +68,7 @@ if visu == true
     drawnow;
     title(k)
 end
-y= -1 * double((real(corr)));
+y= -1 * double((real(corr)))/(sum(abs(ffid(range)))*sum(abs(fshifted(range))));
 end
 %from addphase.m
 % Jamie Near, McGill University 2014. 
