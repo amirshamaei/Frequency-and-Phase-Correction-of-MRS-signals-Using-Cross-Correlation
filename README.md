@@ -5,6 +5,5 @@ The algorithm is based on the "Automatic frequency and phase alignment of in viv
 
 FPCcorr(refrence signal, data(number of points, number of signals), method("fminunc" or "fminsearch"), range(in points, e.g: 1:1:1000), dwelltime, visus(true or false) )
 
-* I didn't normalize the dot product but in case you find it neccessary you can add it to the @func.
 ## This project was supported by:
 European Union's Horizon 2020 research and innovation program under the Marie Sklodowska-Curie grant agreement No 813120 (INSPiRE-MED)
